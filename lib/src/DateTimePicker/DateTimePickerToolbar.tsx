@@ -21,11 +21,17 @@ export const useStyles = makeStyles(
       margin: '0 4px 0 2px',
       cursor: 'default',
     },
+    showingSeconds: {
+      '& h5': {
+        fontSize: '2.1rem',
+      },
+    },
   }),
   { name: 'MuiPickerDTToolbar' }
 );
 
 export const DateTimePickerToolbar: React.FC<ToolbarComponentProps> = ({
+  views,
   date,
   openView,
   setOpenView,
@@ -41,6 +47,9 @@ export const DateTimePickerToolbar: React.FC<ToolbarComponentProps> = ({
   const { meridiemMode, handleMeridiemChange } = useMeridiemMode(date, ampm, onChange);
   const theme = useTheme();
   const rtl = theme.direction === 'rtl';
+
+  const isSeconds: boolean = !!~views.indexOf('seconds');
+  const timeHeading: 'h3' | 'h5' = isSeconds ? 'h5' : 'h3';
 
   return (
     <>
@@ -72,22 +81,36 @@ export const DateTimePickerToolbar: React.FC<ToolbarComponentProps> = ({
             justify="center"
             alignItems="flex-end"
             direction={rtl ? 'row-reverse' : 'row'}
+            className={classes.showingSeconds}
           >
             <ToolbarButton
-              variant="h3"
+              variant={timeHeading}
               onClick={() => setOpenView('hours')}
               selected={openView === 'hours'}
               label={utils.getHourText(date, ampm!)}
             />
 
-            <ToolbarText variant="h3" label=":" className={classes.separator} />
+            <ToolbarText variant={timeHeading} label=":" className={classes.separator} />
 
             <ToolbarButton
-              variant="h3"
+              variant={timeHeading}
               onClick={() => setOpenView('minutes')}
               selected={openView === 'minutes'}
               label={utils.getMinuteText(date)}
             />
+
+            {isSeconds && (
+              <>
+                <ToolbarText variant={timeHeading} label=":" className={classes.separator} />
+
+                <ToolbarButton
+                  variant={timeHeading}
+                  onClick={() => setOpenView('seconds')}
+                  selected={openView === 'seconds'}
+                  label={utils.getSecondText(date)}
+                />
+              </>
+            )}
           </Grid>
 
           {ampm && (

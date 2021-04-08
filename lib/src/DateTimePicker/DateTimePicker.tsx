@@ -14,15 +14,15 @@ import {
   WithPureInputProps,
 } from '../Picker/makePickerWithState';
 
-export type DateTimePickerView = 'year' | 'date' | 'month' | 'hours' | 'minutes';
+export type DateTimePickerView = 'year' | 'date' | 'month' | 'hours' | 'minutes' | 'seconds';
 
 export type BaseDateTimePickerProps = BaseTimePickerProps & BaseDatePickerProps;
 
 export interface DateTimePickerViewsProps extends BaseDateTimePickerProps {
   /** Array of views to show */
-  views?: ('year' | 'date' | 'month' | 'hours' | 'minutes')[];
+  views?: DateTimePickerView[];
   /** First view to show in DatePicker */
-  openTo?: 'year' | 'date' | 'month' | 'hours' | 'minutes';
+  openTo?: DateTimePickerView;
   /** To show tabs */
   hideTabs?: boolean;
   /** Date tab icon */
