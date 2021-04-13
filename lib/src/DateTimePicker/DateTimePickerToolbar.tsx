@@ -25,6 +25,10 @@ export const useStyles = makeStyles(
       '& h5': {
         fontSize: '2.1rem',
       },
+
+      '& h6': {
+        fontSize: '1.8rem',
+      },
     },
   }),
   { name: 'MuiPickerDTToolbar' }
@@ -49,7 +53,15 @@ export const DateTimePickerToolbar: React.FC<ToolbarComponentProps> = ({
   const rtl = theme.direction === 'rtl';
 
   const isSeconds: boolean = !!~views.indexOf('seconds');
-  const timeHeading: 'h3' | 'h5' = isSeconds ? 'h5' : 'h3';
+  let timeHeading: 'h3' | 'h5' | 'h6';
+
+  if (isSeconds && ampm) {
+    timeHeading = 'h6';
+  } else if (isSeconds) {
+    timeHeading = 'h5';
+  } else {
+    timeHeading = 'h3';
+  }
 
   return (
     <>
@@ -81,7 +93,7 @@ export const DateTimePickerToolbar: React.FC<ToolbarComponentProps> = ({
             justify="center"
             alignItems="flex-end"
             direction={rtl ? 'row-reverse' : 'row'}
-            className={classes.showingSeconds}
+            className={isSeconds ? classes.showingSeconds : ''}
           >
             <ToolbarButton
               variant={timeHeading}

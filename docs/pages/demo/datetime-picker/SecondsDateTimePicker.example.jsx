@@ -11,7 +11,6 @@ function SecondsDateTimePicker() {
       <DateTimePicker
         ampm={false}
         label="Seconds DateTimePicker Inline"
-        inputVariant="outlined"
         value={selectedDate}
         onChange={handleDateChange}
         views={DATE_TIME_VIEWS}
@@ -22,7 +21,6 @@ function SecondsDateTimePicker() {
       <DateTimePicker
         ampm={false}
         label="Seconds DateTimePicker"
-        inputVariant="outlined"
         value={selectedDate}
         onChange={handleDateChange}
         views={DATE_TIME_VIEWS}
@@ -32,7 +30,6 @@ function SecondsDateTimePicker() {
       <DateTimePicker
         ampm={true}
         label="Seconds DateTimePicker AM/PM"
-        inputVariant="outlined"
         value={selectedDate}
         onChange={handleDateChange}
         views={DATE_TIME_VIEWS}
