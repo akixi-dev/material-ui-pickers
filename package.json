@@ -1,13 +1,13 @@
 {
   "name": "akixi-material-ui-pickers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Material-ui pickers root package",
   "main": "index.js",
   "directories": {
     "doc": "docs",
     "lib": "lib"
   },
-  "private": true,
+  "private": false,
   "workspaces": [
     "lib",
     "docs"
