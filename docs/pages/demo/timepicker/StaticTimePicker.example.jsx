@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TimePicker } from '@material-ui/pickers';
+import { TimePicker } from 'akixi-material-ui-pickers';
 
 const StaticTimePicker = () => {
   const [date, changeDate] = useState(new Date());

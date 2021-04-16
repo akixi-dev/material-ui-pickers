@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { DateTimePicker } from '@material-ui/pickers';
+import { DateTimePicker } from 'akixi-material-ui-pickers';
 
 const DATE_TIME_VIEWS = ['date', 'month', 'year', 'hours', 'minutes', 'seconds'];
 
