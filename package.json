@@ -1,13 +1,13 @@
 {
   "name": "akixi-material-ui-pickers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Material-ui pickers root package",
   "main": "index.js",
   "directories": {
     "doc": "docs",
     "lib": "lib"
   },
-  "private": false,
+  "private": true,
   "workspaces": [
     "lib",
     "docs"
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/steves165/material-ui-pickers.git"
+    "url": "git+https://github.com/akixi-dev/material-ui-pickers.git"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.6.0",
