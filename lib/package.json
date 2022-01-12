@@ -1,6 +1,6 @@
 {
   "name": "akixi-material-ui-pickers",
-  "version": "3.2.17",
+  "version": "3.2.18",
   "private": true,
   "description": "React components, that implements material design pickers for material-ui v4",
   "main": "./src/index.ts",
