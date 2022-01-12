@@ -1,6 +1,6 @@
 {
   "name": "akixi-material-ui-pickers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Material-ui pickers root package",
   "main": "index.js",
   "directories": {
